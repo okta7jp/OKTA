@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="京都・宇治・西宮エリアの家の修理、リフォームならOKTA オクノ工務店へ。AIアシスタントチームがわかりやすくサポート。ちょこっとした軽作業から本格的な工事までご相談ください。">
+  <title>OKTA オクノ工務店 | KYOTO NISHINOMIYA JAPAN 京都 宇治 西宮甲東園</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      color: #333;
+      background-color: #fcfcfc;
+      line-height: 1.8;
+    }
+    
+    header {
+      background-color: #fff;
+      border-bottom: 2px solid #333;
+      padding: 15px 20px;
+      text-align: center;
+    }
+    .header-logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
+    .header-sub { font-size: 1.1rem; color: #666; margin-top: 3px; line-height: 1.4; }
+
+    /* 集合写真エリア */
+    .hero {
+      background-color: #fafafa;
+      padding: 20px 20px;
+      border-bottom: 1px solid #eee;
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero-message-wrapper {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 30px;
+    }
+    .hero-message {
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      border-right: 5px solid #d35400;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+    .hero-message h1 { font-size: 1.05rem; margin: 0; color: #222; line-height: 1.4; }
+    .hero-badge { display: inline-block; background-color: #333; color: #fff; font-size: 0.85rem; padding: 4px 12px; border-radius: 12px; margin-bottom: 10px; font-weight: bold; }
+    .hero-image { flex: 0 0 280px; text-align: center; }
+    .hero-image img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: block; }
+    .hero-spacer { flex: 1; }
+
+    .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
+
+    .service-row { display: flex; flex-wrap: wrap; align-items: center; background: #fff; padding: 20px; margin-bottom: 30px; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+    .service-img { flex: 0 0 110px; text-align: center; margin-right: 20px; }
+    .service-img img { width: 100%; height: auto; border-radius: 8px; border: 2px solid #eee; display: block; margin: 0 auto; }
+    .service-img .ai-role { font-size: 0.85rem; color: #777; margin-top: 8px; font-weight: bold; line-height: 1.4; }
+    .ai-sub { display: block; font-size: 0.75rem; font-weight: normal; color: #999; margin-top: 2px; }
+
+    .service-text { flex: 1; min-width: 200px; }
+    .service-text h2 { font-size: 1.6rem; margin: 0 0 10px 0; border-bottom: 2px solid #ccc; padding-bottom: 3px; color: #222; display: inline-block; }
+    .service-text p { margin: 0 0 5px 0; font-size: 1.1rem; }
+    .text-en { color: #666; font-size: 1.0rem; font-weight: bold; margin-bottom: 8px !important; }
+    .highlight { font-weight: bold; color: #d35400; }
+
+    .service-img-right { flex: 0 0 180px; margin-left: 20px; text-align: center; }
+    .service-img-right img { width: 100%; height: auto; border-radius: 8px; border: 2px solid #eee; display: block; }
+
+    .row-exterior { border-top: 4px solid #2ecc71; }
+    .row-investigation { border-top: 4px solid #e67e22; }
+    .row-trust { border-top: 4px solid #34495e; background-color: #fdfbf7;}
+    .row-global { border-top: 4px solid #3498db; background-color: #f4f6f7;}
+
+    .qualifications { font-size: 0.95rem; color: #555; background: #fff; padding: 12px; border: 1px dashed #ccc; margin-top: 10px; line-height: 1.6; }
+
+    .link-btns { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+    .link-btn { display: inline-block; padding: 10px 22px; background-color: #ecf0f1; color: #333; text-decoration: none; font-size: 0.9rem; border-radius: 25px; border: 1px solid #bdc3c7; transition: background 0.2s, border-color 0.2s; }
+
+    /* 料金セクション */
+    .price-section { background: #fff; padding: 30px; margin-bottom: 30px; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+    .price-section h2 { text-align: center; font-size: 1.5rem; color: #222; border-bottom: 2px solid #333; padding-bottom: 10px; margin-top: 0; margin-bottom: 25px; }
+    .price-box { margin-bottom: 25px; }
+    .price-box h3 { font-size: 1.2rem; color: #d35400; margin-bottom: 10px; border-left: 4px solid #d35400; padding-left: 10px; }
+    .price-box ul { margin: 0; padding-left: 20px; font-size: 1.05rem; }
+    .price-box li { margin-bottom: 8px; }
+    .price-box p { font-size: 1.05rem; margin: 0 0 10px 0; }
+    
+    .price-with-img { display: flex; gap: 15px; align-items: flex-start; }
+    
+    /* 料金表の画像を少し大きく（60px → 80px） */
+    .price-img { flex: 0 0 80px; text-align: center; }
+    .price-img img { width: 100%; height: auto; border-radius: 8px; border: 2px solid #eee; display: block; margin: 0 auto; }
+    .price-text { flex: 1; }
+
+    .price-important { background: #fdfbf7; padding: 20px; border-radius: 6px; border: 1px dashed #e67e22; margin-top: 15px; }
+    .price-important h4 { margin: 0 0 10px 0; color: #333; font-size: 1.15rem; }
+    .price-important p { font-size: 1rem; margin: 0 0 10px 0; }
+    .price-important p:last-child { margin-bottom: 0; }
+
+    /* お問い合わせエリア（共通） */
+    .contact-area { padding: 40px 20px; background-color: #fafafa; text-align: center; }
+    .contact-wrapper { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .contact-ai-img { width: 80px; height: auto; border-radius: 8px; border: 2px solid #eee; display: block; }
+    .contact-btn { display: inline-block; background-color: #333; color: #fff; text-decoration: none; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 5px; }
+    .contact-sub { font-size: 0.95rem; color: #666; margin-top: 15px; }
+
+    /* 🐰 中間に配置するお問い合わせ専用の微調整 */
+    .contact-area-mid { margin-bottom: 30px; border-radius: 8px; border: 1px solid #ddd; border-top: 4px solid #333; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+    /* 🐰 一番下のお問い合わせ専用の微調整 */
+    .contact-area-bottom { margin-top: 20px; border-top: 2px solid #333; }
+    
+    footer { text-align: center; padding: 20px; color: #777; }
+    /* SEO用の小さい文字のスタイル */
+    .footer-seo-text { font-size: 0.75rem; color: #999; margin-top: 10px; line-height: 1.4; }
+    .footer-copy { font-size: 0.9rem; margin-top: 10px; }
+
+    @media (max-width: 650px) {
+      .hero-inner { flex-direction: column; gap: 15px;}
+      .hero-message-wrapper { padding-right: 0; justify-content: center; order: 2; }
+      .hero-image { order: 1; flex: 0 0 auto; max-width: 250px; }
+      .hero-spacer { display: none; }
+      .hero-message { border-right: none; border-top: 5px solid #d35400; }
+      .service-row { flex-direction: column; text-align: center; padding: 15px;}
+      .service-img { margin-right: 0; margin-bottom: 10px; flex: 0 0 auto;}
+      .img-small img { width: 60%; }
+      .service-text h2 { display: block; border-bottom: none; }
+      .service-text h2::after { content: ''; display: block; width: 50px; height: 2px; background: #ccc; margin: 5px auto 0; }
+      .service-img-right { margin-left: 0; margin-top: 15px; flex: 0 0 auto; width: 80%; max-width: 250px; }
+      .price-section { padding: 20px 15px; }
+      
+      .price-with-img { flex-direction: column; }
+      /* スマホ表示でも料金表の画像を少し大きく（60px → 80px） */
+      .price-img { margin: 0 auto 10px auto; width: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-logo">OKTA オクノ工務店</div>
+    <div class="header-sub">KYOTO NISHINOMIYA JAPAN<br>京都 宇治 西宮甲東園<br>Home Renovation / Refurbishment</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-message-wrapper">
+        <div class="hero-message">
+          <span class="hero-badge">Okta-Brain</span>
+          <h1>現場をサポートする<br>AI アシスタントチーム</h1>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://drive.google.com/thumbnail?id=1uTIk_SfceIXdKN_o0kCUq8d_voJgHAGb&sz=w1000" alt="OKTA オクノ工務店 AIチーム Okta-Brain">
+      </div>
+      <div class="hero-spacer"></div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <div class="service-row row-exterior">
+      <div class="service-img">
+        <img src="https://drive.google.com/thumbnail?id=1Oe6yWIKIq_BXG1gdMDbS8hPrVcspPcZq&sz=w1000" alt="現場実務支援 Okta">
+        <div class="ai-role">
+          現場実務支援AI<br>代表のAI双子<br>オクタ
+        </div>
+      </div>
+      <div class="service-text">
+        <p class="text-en">exterior interior / water troubles</p>
+        <h2>家にかかわる工事、相談 OK</h2>
+        <p class="highlight">小～大規模修繕/ 内外装/ 水回り</p>
+        <p>防犯カメラ取り付け・インターホン取替・壁紙交換・床の貼替・鍵の交換　</p>
+        <p>冷たい、寒いお風呂の改善  / 手すりなど介護改修　ほかなんでも</p>
+        <p style="font-size: 0.95rem; color: #888;">junk removal / furniture disposal</p>
+      </div>
+    </div>
+
+    <div class="service-row row-investigation">
+      <div class="service-img img-small">
+        <img src="https://drive.google.com/thumbnail?id=1XtLu1FOM1lcTxYOh38P21_RVJDBkUKp4&sz=w1000" alt="現場実務支援 ウサギ">
+        <div class="ai-role">
+          現場実務支援AI<br>代表のペットが転生<br>ウサギ
+        </div>
+      </div>
+      <div class="service-text">
+        <p class="text-en">investigation</p>
+        <h2>調査 相談</h2>
+        <p><span class="highlight">相談調査 OK / DIY相談 OK</span></p>
+      </div>
+      <div class="service-img-right">
+        <img src="https://drive.google.com/thumbnail?id=16oUM-jrqETo-xV0_a7nOZ3sdKwlqye6O&sz=w1000" alt="調査 相談 イメージ">
+      </div>
+    </div>
+
+    <div class="service-row row-trust">
+      <div class="service-img">
+        <img src="https://drive.google.com/thumbnail?id=16vHznh5MpOqNP3fs3Ag3mlFQn7PVtaQF&sz=w1000" alt="信頼管理会計担当 パウルル">
+        <div class="ai-role">
+          会計担当AI<br>某議長パウルル
+        </div>
+      </div>
+      <div class="service-text">
+        <h2>京都で約50年</h2>
+        <p><span class="highlight">既存顧客とその紹介を中心に事業をしておりますが、お困りの方はお気軽にご相談ください。</span></p>
+        <div class="qualifications">
+          所有資格：1級建築施工管理技士 ／ 2級建築士 ／ 建築事務所（京都府登録） ／ 石綿調査士・作業主任 ／ 木造耐震診断士 ／ 電気工事士 ／ ガス可とう管監理者ほか
+        </div>
+      </div>
+    </div>
+
+    <div class="service-row row-global">
+      <div class="service-img img-small">
+        <img src="https://drive.google.com/thumbnail?id=12Hjbx1tjV5toKClfStjoEj7as8sdQrXX&sz=w1000" alt="人間を厳しく取り締まる秘書 L">
+        <div class="ai-role">
+          人間を厳しく取り締まる秘書AI<br>L [エル]
+        </div>
+      </div>
+      <div class="service-text">
+        <h2>non-JAPANESE OK</h2>
+        <p class="highlight">TATAMI 畳 / KAWARA 瓦 / SYOUJI 障子 / HUSUMA ふすま</p>
+        <div class="link-btns">
+          <a href="https://translate.google.co.jp/" target="_blank" class="link-btn">Google Translate</a>
+          <a href="https://chat.openai.com/" target="_blank" class="link-btn">ChatGPT</a>
+          <a href="https://claude.ai/" target="_blank" class="link-btn">Claude</a>
+          <a href="https://gemini.google.com/" target="_blank" class="link-btn">Gemini</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-area contact-area-mid">
+      <div class="contact-wrapper">
+        <img src="https://drive.google.com/thumbnail?id=1dwpHK4umDnizGGCZITuul6YnxLs9zI0D&sz=w1000" alt="お問い合わせ案内 ウサギ" class="contact-ai-img">
+        <a href="mailto:good@okta7.com" class="contact-btn">✉ ご相談・お問い合わせ</a>
+      </div>
+      <div class="contact-sub">good@okta7.com （※@okta7.comの受信設定をお願いします）</div>
+    </div>
+
+    <div class="price-section">
+      <h2>料金の目安と、お見積りについて</h2>
+      
+      <div class="price-box price-with-img">
+        <div class="price-img">
+          <img src="https://drive.google.com/thumbnail?id=1gb_TGSI3CzhZ7LMafOfFwz4OUZRYZW0Q&sz=w1000" alt="案内ウサギ">
+        </div>
+        <div class="price-text">
+          <h3>■ ちょこっとサポート（軽作業）の目安</h3>
+          <ul>
+            <li><strong>￥1,000 ～ ￥3,900 程度</strong><br>ネジの締め直し、電池交換、家電の操作サポート、家具の移動、コンセント交換など。</li>
+            <li><strong>￥5,900 程度</strong><br>少し専門的な知識や工具が必要な作業（2時間程度まで）。</li>
+            <li><strong>材料費が必要な場合は別途　繁忙時の場合別途手数料を頂くこともあります</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="price-box price-with-img">
+        <div class="price-img">
+          <img src="https://drive.google.com/thumbnail?id=1yCLoClbQyPbJUgxi_ptWVxZnPQpQK7lg&sz=w1000" alt="パウルル">
+        </div>
+        <div class="price-text">
+          <h3>■ 本格的なリフォームと、お見積りについて</h3>
+          <p>本格的な工事につきましては、「住宅リフォーム推進協議会」などが公表している相場価格を参考にしております。<br>ただ、家屋は一軒一軒違いますので、実際にお家を拝見して最適なご提案をさせていただきます。</p>
+        </div>
+      </div>
+
+      <div class="price-box price-with-img">
+        <div class="price-img">
+          <img src="https://drive.google.com/thumbnail?id=1Oe6yWIKIq_BXG1gdMDbS8hPrVcspPcZq&sz=w1000" alt="Okta">
+        </div>
+        <div class="price-text">
+          <h3>■ DIYのご相談について</h3>
+          <p>DIYのアドバイスもいたしますので、お気軽にご相談ください。</p>
+        </div>
+      </div>
+
+      <div class="price-box price-with-img">
+        <div class="price-img">
+          <img src="https://drive.google.com/thumbnail?id=1UkOJxly4mDZtEfgWwNpYmmQPmFv1Vuok&sz=w1000" alt="おじぎウサギ">
+        </div>
+        <div class="price-text">
+          <h3>■ AIチームからのお願い</h3>
+          <p>大変申し訳ありませんが、以下の作業につきましては<strong>お断りする場合がございます。</strong></p>
+          <ul>
+            <li>重量物の運搬（重い家具の移動など）</li>
+            <li>強い悪臭を伴う作業、過酷な汚れ作業（ドブ掃除など）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="price-important">
+        <h4>【他社様のお見積り・相見積もりについて】</h4>
+        <p>「他社でもらった見積もりの内容が適正か知りたい」といったダブルチェックのご相談はお受けいたしますが、<strong>適正である場合、実際の工事はそちらの業者様へご依頼ください。</strong></p>
+        <p>また、当店に相見積もり（他社と比較するためのお見積り）をご依頼される場合、<strong>現地調査およびお見積り作成費用をご請求させていただきます。</strong></p>
+        <p>なお、当店が作成したお見積書・提案書は「著作物」となります。他社様へそのまま見せたり、渡したりする行為は固くお断りいたします。</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="contact-area contact-area-bottom">
+    <div class="contact-wrapper">
+      <img src="https://drive.google.com/thumbnail?id=1dwpHK4umDnizGGCZITuul6YnxLs9zI0D&sz=w1000" alt="お問い合わせ案内 ウサギ" class="contact-ai-img">
+      <a href="mailto:good@okta7.com" class="contact-btn">✉ ご相談・お問い合わせ</a>
+    </div>
+    <div class="contact-sub">good@okta7.com （※@okta7.comの受信設定をお願いします）</div>
+  </div>
+
+  <footer>
+    <div class="footer-seo-text">
+      京都・宇治・甲東園　西宮エリアの家の修理、リフォームならOKTA オクノ工務店へ。<br>
+      AIアシスタントチームがサポート。ちょこっとした軽作業から本格的な工事までご相談ください。
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 OKTA オクノ工務店 / Project Okta-Brain
+    </div>
+  </footer>
+
+</body>
+</html>
