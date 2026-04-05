@@ -10,10 +10,12 @@
     .header-logo { font-size: 1.5rem; font-weight: bold; }
     .header-sub { font-size: 1rem; color: #666; margin-top: 3px; }
 
-    .hero { background-color: #fafafa; padding: 20px; border-bottom: 1px solid #eee; }
+    /* 🛠️ ここをコンパクトに修正しました */
+    .hero { background-color: #fafafa; padding: 10px 20px; border-bottom: 1px solid #eee; }
     .hero-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .hero-message { background: #fff; padding: 12px; border-radius: 8px; border-left: 5px solid #d35400; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    .hero-image img { width: 100%; max-width: 500px; height: auto; border-radius: 8px; display: block; }
+    .hero-message { background: #fff; padding: 10px; border-radius: 8px; border-left: 5px solid #d35400; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .hero-message h1 { font-size: 1.0rem; margin: 0; line-height: 1.4; } /* 文字を小さく */
+    .hero-image img { width: 100%; max-width: 350px; height: auto; border-radius: 8px; display: block; } /* 画像を350pxに縮小 */
 
     .news-section { padding: 10px 20px; background-color: #ffffff; max-width: 800px; margin: 20px auto 10px auto; }
     .news-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
@@ -39,7 +41,6 @@
     .container { max-width: 800px; margin: 0 auto; padding: 0 20px 30px 20px; }
     .service-row { display: flex; align-items: flex-start; background: #fff; padding: 20px; margin-bottom: 30px; border-radius: 8px; border: 1px solid #ddd; border-top: 4px solid #333; }
     
-    /* 🖼️ 画像サイズ110px固定 */
     .service-img { flex: 0 0 110px; text-align: center; margin-right: 20px; }
     .service-img img { width: 100%; height: auto; border-radius: 8px; border: 2px solid #eee; display: block; }
     .service-img .ai-role { font-size: 0.8rem; color: #777; margin-top: 5px; font-weight: bold; }
@@ -76,6 +77,7 @@
       .faq-grid { grid-template-columns: 1fr; }
       .service-img, .service-img-right, .price-img { flex: 0 0 80px; }
       .service-text h2 { font-size: 1.2rem; }
+      .hero-image img { max-width: 200px; }
     }
   </style>
 </head>
