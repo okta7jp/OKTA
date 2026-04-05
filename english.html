@@ -35,7 +35,18 @@
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 50px; }
     .faq-item { border: 1px solid #ddd; border-radius: 6px; background: #fff; }
     .faq-title { padding: 15px; background-color: #f4f4f4; cursor: pointer; font-weight: bold; font-size: 1.1rem; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: space-between; }
-    .kanji-icon { font-size: 1.6rem; color: #a0522d; font-family: 'Noto Serif JP', serif; }
+    /* カテゴリーアイコンの基本設定（少し大きくしました） */
+.kanji-icon { 
+  font-size: 2.2rem; 
+  font-family: 'Noto Serif JP', serif; 
+  font-weight: 900;
+}
+
+/* 個別の色指定 */
+.icon-water { color: #00bfff; } /* 水色 */
+.icon-electric { color: #ff8c00; } /* 黄色オレンジ */
+.icon-interior { color: #8b4513; } /* 茶色 */
+.icon-exterior { color: #2e8b57; } /* 緑 */
     .faq-content { padding: 20px; font-size: 0.95rem; }
     .faq-content li { margin-bottom: 25px; border-bottom: 1px dashed #ccc; padding-bottom: 15px; list-style: none; }
     .lang-en { display: block; font-weight: bold; color: #111; font-size: 1.1rem; }
