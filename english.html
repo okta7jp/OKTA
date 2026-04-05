@@ -3,74 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>House Support | OKUNO Renovations Kyoto</title>
+  <title>Foreigner House Support | OKUNO Renovations Kyoto</title>
   <style>
-    body { margin: 0; padding: 0; font-family: 'Times New Roman', serif; background-color: #fdfaf5; color: #333; line-height: 1.8; }
+    body { margin: 0; padding: 0; font-family: 'Times New Roman', 'Noto Serif SC', serif; background-color: #fdfaf5; color: #333; line-height: 1.8; }
     header { background-color: #fff; border-bottom: 2px solid #333; padding: 20px; text-align: center; }
+    .header-logo { font-size: 1.6rem; font-weight: bold; letter-spacing: 2px; }
     .container { max-width: 900px; margin: 0 auto; padding: 20px; }
     
-    /* ⛩️ タカシさん選定の畳の部屋（気持ち悪い写真は全削除） */
+    /* ⛩️ タカシさん選定：畳の部屋を中央に */
     .hero-en { 
       background-image: url('https://drive.google.com/thumbnail?id=16oUM-jrqETo-xV0_a7nOZ3sdKwlqye6O&sz=w1000');
       background-size: cover; background-position: center; height: 350px; border-radius: 8px; position: relative; margin-bottom: 30px; 
     }
-    .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; }
+    .hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; }
+    .hero-overlay h1 { font-size: 2.2rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); margin: 0; }
 
     .message-box { background: #fff; padding: 25px; border-left: 10px solid #d35400; border: 1px solid #ddd; margin-bottom: 30px; }
-    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 40px; }
-    .faq-item { border: 1px solid #eee; border-radius: 4px; background: #fff; }
-    .faq-title { padding: 12px; background-color: #f9f9f9; cursor: pointer; font-weight: bold; font-size: 0.95rem; position: relative; }
-    .faq-title::after { content: '＋'; position: absolute; right: 10px; }
-    .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s; }
-    .faq-item.open .faq-content { max-height: 3000px; }
-    .faq-content ul { padding: 15px; list-style: none; margin: 0; font-size: 0.85rem; }
-    .faq-content li { border-bottom: 1px dashed #eee; padding-bottom: 10px; margin-bottom: 10px; }
+    .message-box h2 { margin-top: 0; color: #d35400; font-size: 1.5rem; }
 
     /* 🖤 漆黒・極細の問い合わせバー */
-    .black-contact-section { background: #000; color: #fff; padding: 20px; text-align: center; border-radius: 4px; margin-top: 40px; }
-    .contact-link { color: #fff; text-decoration: none; font-weight: bold; border: 1px solid #fff; padding: 6px 30px; border-radius: 2px; font-size: 0.9rem; }
+    .slim-contact-bar { max-width: 800px; margin: 0 auto 30px; padding: 0; }
+    .slim-contact-link { display: block; background: #000; color: #fff; text-decoration: none; text-align: center; padding: 8px; border-radius: 2px; font-weight: bold; font-size: 0.9rem; letter-spacing: 2px; }
 
-    @media (max-width: 650px) { .faq-grid { grid-template-columns: 1fr; } }
+    /* 外国人あるある40項目（アコーディオン） */
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 40px; }
+    .faq-item { border: 1px solid #eee; border-radius: 4px; background: #fff; }
+    .faq-title { padding: 12px; background-color: #f9f9f9; cursor: pointer; position: relative; font-weight: bold; font-size: 0.95rem; }
+    .faq-title::after { content: '＋'; position: absolute; right: 12px; }
+    .faq-item.open .faq-title::after { content: '－'; }
+    .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #fff; }
+    .faq-item.open .faq-content { max-height: 3000px; }
+    .faq-content ul { padding: 15px; list-style: none; margin: 0; }
+    .faq-content li { margin-bottom: 15px; font-size: 0.85rem; border-bottom: 1px dashed #eee; padding-bottom: 10px; line-height: 1.5; }
+    .lang-en { display: block; font-weight: bold; color: #222; }
+    .lang-cn { display: block; color: #666; font-style: italic; margin-top: 3px; }
+
+    /* AIチーム紹介（110px固定） */
+    .member-row { display: flex; align-items: flex-start; background: #fff; padding: 20px; margin-bottom: 25px; border-radius: 8px; border: 1px solid #ddd; border-top: 4px solid #333; }
+    .member-img { flex: 0 0 110px; text-align: center; margin-right: 20px; }
+    .member-img img { width: 110px; height: auto; border-radius: 8px; border: 2px solid #eee; }
+    .member-text h4 { margin: 0 0 5px; font-size: 1.2rem; color: #d35400; }
+    .member-text p { margin: 0; font-size: 0.95rem; }
+
+    footer { text-align: center; padding: 30px; color: #888; border-top: 1px solid #eee; }
+
+    @media (max-width: 650px) { .faq-grid { grid-template-columns: 1fr; } .member-img { flex: 0 0 80px; } .member-img img { width: 80px; } }
   </style>
 </head>
 <body>
-<header><div style="font-size: 1.6rem; font-weight: bold;">OKUNO Renovations Kyoto</div></header>
+
+<header><div class="header-logo">OKUNO Renovations Kyoto</div></header>
 
 <div class="container">
   <div class="hero-en"><div class="hero-overlay"><h1>Art of Japanese Living</h1></div></div>
 
   <div class="message-box">
     <h2>"I support everything except family quarrels."</h2>
-    <p>Professional maintenance for traditional houses with 50 years of experience. Licensed craftsmen.</p>
+    <p>Professional house maintenance for expats and non-Japanese speakers. We understand your daily stresses in Japan.</p>
+  </div>
+
+  <div class="slim-contact-bar">
+    <a href="mailto:good@okta7.com" class="slim-contact-link">✉ INQUIRY / CONSULTATION</a>
   </div>
 
   <div class="faq-grid">
     <div class="faq-item">
-      <div class="faq-title">1. Water & Plumbing</div>
+      <div class="faq-title">1. Water & Plumbing / 厨卫水电</div>
       <div class="faq-content"><ul>
-        <li>Oidaki function? <span style="display:block; color:#666;">不懂浴缸加热（追い焚き）功能，每天换水。</span></li>
-        <li>Bidet nozzle cleaning? <span style="display:block; color:#666;">不知道马桶盖喷嘴怎么清理。</span></li>
+        <li>お風呂の「追い焚き」意味がわからず毎日入れ替えている<span class="lang-en">"Don't understand 'Oidaki' (reheating), so refill bathtub every day."</span><span class="lang-cn">不懂浴缸加热（追い焚き）功能，只能每天换水。</span></li>
+        <li>シンクが低く、洗い物のたびに腰が痛くなる<span class="lang-en">"Kitchen sink is lower than my home country, back hurts while washing."</span><span class="lang-cn">厨房水槽太矮，每天洗碗总是弯着腰弄得腰酸背痛。</span></li>
+        <li>洗濯機の排水口からのニオイ。外し方がわからない<span class="lang-en">"Bad smell from drain, but don't know how to clean it."</span><span class="lang-cn">洗衣机排水口有异味，不知道该拆下哪个部件来清洗。</span></li>
       </ul></div>
     </div>
     <div class="faq-item">
-        <div class="faq-title">More Categories</div>
-        <div class="faq-content"><ul>
-            <li>Garbage rules? <span style="display:block; color:#666;">垃圾分类太繁琐。</span></li>
-            <li>Fusuma stuck? <span style="display:block; color:#666;">推拉门变得很难拉。</span></li>
-        </ul></div>
+      <div class="faq-title">2. Electrical & Appliances / 电器设备</div>
+      <div class="faq-content"><ul>
+        <li>アース線をどこに繋げばいいか途方に暮れる<span class="lang-en">"Japanese outlets only have two prongs, where is the ground wire?"</span><span class="lang-cn">插座只有两个孔，绿色的地线完全不知道接哪里。</span></li>
+        <li>エアコンのフィルターランプ。カバーを壊しそうで怖い<span class="lang-en">"AC 'clean filter' light is on, but afraid of breaking the cover."</span><span class="lang-cn">空调亮起清理滤网灯，但不知道怎么拆，怕弄坏。</span></li>
+        <li>インターホンの早口な日本語が怖くて居留守を使う<span class="lang-en">"Fast Japanese on intercom? I pretend not to be home."</span><span class="lang-cn">门铃响了日语说太快听不懂，干脆假装不在家。</span></li>
+      </ul></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-title">3. Interior & Fixtures / 门窗内装</div>
+      <div class="faq-content"><ul>
+        <li>ふすまが滑らないが直し方がわからず蛮力を使う<span class="lang-en">"Sliding doors stuck, don't know how to fix, only use force."</span><span class="lang-cn">推拉门变得很难拉，不知道怎么修只能用蛮力。</span></li>
+        <li>窓の鍵（クレセント）のストッパーに気づかずパニック<span class="lang-en">"Struggle with window lock catch and feel locked in."</span><span class="lang-cn">不懂月牙锁还有防盗扣，打不开窗以为被反锁。</span></li>
+      </ul></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-title">4. Exterior & Others / 室外与其他</div>
+      <div class="faq-content"><ul>
+        <li>ゴミ分別のルールが細かすぎてパズルのよう<span class="lang-en">"Garbage sorting rules are like a complex puzzle."</span><span class="lang-cn">垃圾分类规定太繁琐，完全不知道怎么扔。</span></li>
+        <li>地震に備えた家具固定。突っ張り棒の正しい付け方<span class="lang-en">"Don't know the correct way to install tension rods."</span><span class="lang-cn">想固定家具防震，但不知道伸缩杆正确安装法。</span></li>
+      </ul></div>
     </div>
   </div>
 
-  <div class="black-contact-section">
-    <p style="margin-bottom:15px; font-size: 0.8rem;">TRUSTED PARTNERS: LIXIL / DAIKEN / Panasonic</p>
-    <a href="mailto:good@okta7.com" class="contact-link">✉ CONTACT US</a>
+  <div class="member-row" style="border-top-color: #34495e;">
+    <div class="member-img"><img src="https://drive.google.com/thumbnail?id=16vHznh5MpOqNP3fs3Ag3mlFQn7PVtaQF&sz=w1000" alt="Paulul"></div>
+    <div class="member-text"><h4>Paulul (Licensed Expert)</h4><p>50 years of trust in Kyoto. 1st-Class Construction Management & Architect licenses.</p></div>
   </div>
-  <a href="index.html" style="display: block; text-align: center; margin-top: 20px; color: #888; text-decoration: none;">← Back to Japanese Page</a>
+
+  <div class="member-row" style="border-top-color: #3498db;">
+    <div class="member-img"><img src="https://drive.google.com/thumbnail?id=12Hjbx1tjV5toKClfStjoEj7as8sdQrXX&sz=w1000" alt="L"></div>
+    <div class="member-text"><h4>L (Secretary AI)</h4><p>An Ogre born from an Ogre. strictly managing humans to provide the best service.</p></div>
+  </div>
+
+  <div style="text-align: center; margin-top: 50px;">
+    <p style="color: #666; font-size: 0.9rem;">PARTNERS: <b>LIXIL / DAIKEN / Panasonic</b></p>
+    <a href="index.html" style="color: #888; text-decoration: none;">← Back to Japanese Page</a>
+  </div>
 </div>
+
+<footer>&copy; 2026 OKTA Renovations Kyoto</footer>
 
 <script>
   const faqTitles = document.querySelectorAll('.faq-title');
-  faqTitles.forEach(title => { title.addEventListener('click', () => { title.parentNode.classList.toggle('open'); }); });
+  faqTitles.forEach(title => {
+    title.addEventListener('click', () => {
+      title.parentNode.classList.toggle('open');
+    });
+  });
 </script>
 </body>
 </html>
