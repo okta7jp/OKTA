@@ -73,8 +73,91 @@
     .news-text { font-size: 1rem; color: #333; font-weight: bold; flex: 1; }
     .news-link { color: #0056b3; text-decoration: underline; font-size: 0.85rem; margin-left: 10px; font-weight: normal; }
 
+    /* 🐰 お悩み「あるある」事典セクション（追加） */
+    .faq-section {
+      background-color: #ffffff;
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .faq-section h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #222;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .faq-intro {
+      font-size: 1.05rem;
+      text-align: center;
+      margin-bottom: 25px;
+      color: #555;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    /* 折りたたみ全体 */
+    .faq-item {
+      border: 1px solid #eee;
+      border-radius: 6px;
+    }
+    /* タイトル部分 */
+    .faq-title {
+      padding: 15px 20px;
+      background-color: #fafafa;
+      cursor: pointer;
+      position: relative;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    /* プラスマイナスアイコン */
+    .faq-title::after {
+      content: '＋';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: #888;
+    }
+    /* 開いた時のマイナスアイコン */
+    .faq-item.open .faq-title::after {
+      content: '－';
+    }
+    /* 中身の部分（初期は非表示） */
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out; /* スッと開くアニメーション */
+      background-color: #fff;
+    }
+    .faq-item.open .faq-content {
+      max-height: 1000px; /* 十分な高さを指定 */
+    }
+    .faq-content ul {
+      margin: 0;
+      padding: 20px 25px;
+      list-style-type: disc;
+    }
+    .faq-content li {
+      margin-bottom: 12px;
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    .faq-content li:last-child {
+      margin-bottom: 0;
+    }
+
     /* メインコンテンツ容器 */
-    .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px 30px 20px; }
 
     /* サービス行の基本設定 */
     .service-row { 
@@ -88,14 +171,14 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
     }
     
-    /* 🖼️ 画像サイズの統一設定（ここがポイント） */
+    /* 画像サイズの統一設定（110px） */
     .service-img { 
-      flex: 0 0 110px; /* 横幅を110pxに固定 */
+      flex: 0 0 110px; 
       text-align: center; 
       margin-right: 20px; 
     }
     .service-img img { 
-      width: 100%; /* 親要素の110pxいっぱいに表示 */
+      width: 100%; 
       height: auto; 
       border-radius: 8px; 
       border: 2px solid #eee; 
@@ -158,6 +241,14 @@
       .hero-message h1 { font-size: 0.85rem; }
       .hero-image { flex: 1; }
 
+      /* お悩み事典スマホ調整 */
+      .faq-section { padding: 20px 10px; margin: 20px auto; }
+      .faq-section h2 { font-size: 1.3rem; }
+      .faq-intro { font-size: 0.95rem; }
+      .faq-title { padding: 12px 15px; font-size: 1rem; }
+      .faq-content ul { padding: 15px 20px; }
+      .faq-content li { font-size: 0.9rem; margin-bottom: 10px; }
+
       .service-row { padding: 15px 10px; }
       /* スマホでも画像サイズを固定（少しだけ小さく 80px） */
       .service-img { flex: 0 0 80px; margin-right: 12px; }
@@ -206,6 +297,77 @@
     </div>
   </div>
 
+  <div class="faq-section">
+    <h2>家のお悩み「あるある」事典</h2>
+    <p class="faq-intro highlight">「夫婦喧嘩以外の家のことは全部承ります」</p>
+    <p class="faq-intro">わざわざ電話するほどではないけれど、毎日地味にストレス……<br>そんな「些細なお悩み」をタップしてご覧ください。</p>
+    
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-title">1. 水回り（キッチン、トイレ、お風呂など）</div>
+        <div class="faq-content">
+          <ul>
+            <li>水道の蛇口から、じんわり水が漏れている気がするけれど、ポタポタ落ちるわけじゃないから放置している</li>
+            <li>昔ながらのタイルのお風呂が、冬場はとにかく冷たくて寒い</li>
+            <li>シャワーヘッドの穴のいくつかが詰まっていて、お湯の出る方向があちこち向いている</li>
+            <li>キッチンの換気扇のフィルター掃除が億劫で、中がどうなっているか見るのが怖い</li>
+            <li>キッチンのシンク下の扉を開けると、なんだかいつもカビ臭いような気がする</li>
+            <li>洗面台の鏡の裏の収納棚の扉が、カチッと閉まらなくなってきた</li>
+            <li>トイレの床のクッションフロアが、便器の際だけ少し浮いてきている</li>
+            <li>洗面所の排水口がすぐ詰まるようになり、水の引きがなんとなく悪い</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-title">2. 電気・設備（照明、コンセント、換気扇など）</div>
+        <div class="faq-content">
+          <ul>
+            <li>ネットで防犯カメラを買ったけれど、上手な付け方やちょっとしたコツが分からない</li>
+            <li>廊下のダウンライトの電球を替えたいけれど、カバーの外し方がわからない</li>
+            <li>買ったばかりのWi-Fiルーター、繋がってはいるけれど配線がぐちゃちゃでホコリの温床になっている</li>
+            <li>エアコンの効きが悪くなった気がするけれど、お掃除機能付きだから自分では触れない</li>
+            <li>玄関の外の照明が暗くて、夜に鍵穴がよく見えない</li>
+            <li>タコ足配線が限界で見た目も危なっかしいけれど、どう整理していいかわからない</li>
+            <li>家電量販店で買った大きな照明器具、取り付けだけお願いするなんて申し訳なくて頼めない</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-title">3. 建具・内装（ドア、窓、床、壁紙など）</div>
+        <div class="faq-content">
+          <ul>
+            <li>網戸がレールからすぐ外れるし、網が少し破れているけれどガムテープで凌いでいる</li>
+            <li>フローリングの一部が、歩くたびに『ギシッ』と鳴るのが気になる</li>
+            <li>猫が引っ掻いてボロボロになった壁紙、一部分だけ直せるなら直したい</li>
+            <li>窓の結露がひどくて、窓枠の木が黒く変色してきた</li>
+            <li>階段の手すりが少しガタついていて、体重をかけるのが怖い</li>
+            <li>玄関のドアクローザーの調子が悪く、バタン！と大きな音で閉まってしまう</li>
+            <li>クローゼットの折れ戸の金具が外れて、中途半端に開いたままになっている</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-title">4. 外回り・その他（庭、外壁、重いものの移動など）</div>
+        <div class="faq-content">
+          <ul>
+            <li>粗大ゴミに出したい家具があるけれど、重くて2階から一人では下ろせない</li>
+            <li>買ったばかりの組み立て家具、途中までやったけれど部品が余って心が折れた</li>
+            <li>庭の木が伸び放題だけど、植木屋さんに頼むほど立派な庭でもないし…と放置している</li>
+            <li>雨どいから水がポタポタ落ちてきて、雨の日はその音が気になって眠れない</li>
+            <li>防犯用に砂利を敷きたいけれど、ホームセンターで何袋も買って運ぶ自信がない</li>
+            <li>ポストの蓋のバネが馬鹿になっていて、風の強い日にパカパカ鳴る</li>
+            <li>自転車置き場の屋根の波板が古くなっていて、強風のたびに飛ばないかヒヤヒヤする</li>
+            <li>「こんな小さなことで呼んでいいのかな」とお悩みの方、お気軽にご相談ください</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
   <div class="container">
 
     <div class="service-row row-exterior">
@@ -308,7 +470,7 @@
 
       <div class="price-important">
         <h4>【お見積りについて】</h4>
-        <p>他社見積りのダブルチェックのご相談は可能ですが、適正の場合はその施工業者様へご依頼ください。当店への相見積もりは別途費用を頂戴します。</p>
+        <p>ダブルチェックのご相談は可能ですが、適正価格の場合はそのまま施工業者様へご依頼ください。当店への相見積もりは別途費用を頂戴します。</p>
       </div>
     </div>
 
@@ -325,6 +487,28 @@
     <div class="footer-seo-text">京都・宇治・西宮エリアの家の修理、リフォームならOKTA オクノ工務店へ。</div>
     <div class="footer-copy">&copy; 2026 OKTA オクノ工務店</div>
   </footer>
+
+  <script>
+    // faq-title をクリックした時の動作
+    const faqTitles = document.querySelectorAll('.faq-title');
+    
+    faqTitles.forEach(title => {
+      title.addEventListener('click', () => {
+        // クリックされたアイテムを取得
+        const item = title.parentNode;
+        
+        // すでに開いている場合は閉じる、閉じている場合は開く（自分自身のみ）
+        item.classList.toggle('open');
+        
+        // 他のアイテムを閉じたい場合は以下のコメントアウトを解除
+        // faqTitles.forEach(otherTitle => {
+        //   if (otherTitle !== title) {
+        //     otherTitle.parentNode.classList.remove('open');
+        //   }
+        // });
+      });
+    });
+  </script>
 
 </body>
 </html>
