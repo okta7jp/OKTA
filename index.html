@@ -57,6 +57,49 @@
     .hero-image img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: block; }
     .hero-spacer { flex: 1; }
 
+    /* 🐰 お家の御用聞き（旬のお知らせ）セクション */
+    .news-section {
+      padding: 10px 20px;
+      background-color: #ffffff; /* 真っ白 */
+      max-width: 800px;
+      margin: 20px auto 0 auto;
+    }
+    .news-list {
+      display: flex;
+      flex-direction: column;
+    }
+    .news-item {
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 15px 0;
+      border-bottom: 1px solid #eeeeee; /* クリーンな細い線 */
+    }
+    .news-item:last-child {
+      border-bottom: none;
+    }
+    .news-icon {
+      width: 60px;
+      height: auto;
+      margin-right: 15px;
+      flex-shrink: 0;
+      border-radius: 4px;
+    }
+    .news-text {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+    .news-link {
+      color: #0056b3;
+      text-decoration: underline;
+      font-size: 0.85rem;
+      display: block;
+      margin-top: 5px;
+      font-weight: normal;
+    }
+
     .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
 
     .service-row { display: flex; flex-wrap: wrap; align-items: center; background: #fff; padding: 20px; margin-bottom: 30px; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
@@ -72,7 +115,7 @@
     .highlight { font-weight: bold; color: #d35400; }
 
     .service-img-right { flex: 0 0 180px; margin-left: 20px; text-align: center; }
-    .service-img-right img { width: 100%; height: auto; border-radius: 8px; border: 2px solid #eee; display: block; }
+    .service-img-right img { width: 100%; height: auto; border-radius: 8px; border: 2px solid #eee; display: block; margin: 0 auto; }
 
     .row-exterior { border-top: 4px solid #2ecc71; }
     .row-investigation { border-top: 4px solid #e67e22; }
@@ -95,7 +138,6 @@
     
     .price-with-img { display: flex; gap: 15px; align-items: flex-start; }
     
-    /* 料金表の画像を少し大きく（60px → 80px） */
     .price-img { flex: 0 0 80px; text-align: center; }
     .price-img img { width: 100%; height: auto; border-radius: 8px; border: 2px solid #eee; display: block; margin: 0 auto; }
     .price-text { flex: 1; }
@@ -112,33 +154,44 @@
     .contact-btn { display: inline-block; background-color: #333; color: #fff; text-decoration: none; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 5px; }
     .contact-sub { font-size: 0.95rem; color: #666; margin-top: 15px; }
 
-    /* 🐰 中間に配置するお問い合わせ専用の微調整 */
     .contact-area-mid { margin-bottom: 30px; border-radius: 8px; border: 1px solid #ddd; border-top: 4px solid #333; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-    /* 🐰 一番下のお問い合わせ専用の微調整 */
     .contact-area-bottom { margin-top: 20px; border-top: 2px solid #333; }
     
     footer { text-align: center; padding: 20px; color: #777; }
-    /* SEO用の小さい文字のスタイル */
     .footer-seo-text { font-size: 0.75rem; color: #999; margin-top: 10px; line-height: 1.4; }
     .footer-copy { font-size: 0.9rem; margin-top: 10px; }
 
+    /* =========================================
+       スマートフォン向け設定 (画面幅650px以下)
+       ========================================= */
     @media (max-width: 650px) {
-      .hero-inner { flex-direction: column; gap: 15px;}
-      .hero-message-wrapper { padding-right: 0; justify-content: center; order: 2; }
-      .hero-image { order: 1; flex: 0 0 auto; max-width: 250px; }
+      /* 集合写真とメッセージをスマホでも横並びに */
+      .hero-inner { flex-direction: row; gap: 10px; align-items: center; }
+      .hero-message-wrapper { padding-right: 0; justify-content: flex-start; flex: 1; }
+      .hero-message { border-right: none; padding: 10px; box-shadow: none; border-left: 4px solid #d35400; }
+      .hero-message h1 { font-size: 0.95rem; }
+      .hero-badge { font-size: 0.75rem; padding: 2px 8px; margin-bottom: 5px; }
+      .hero-image { flex: 0 0 45%; max-width: 180px; }
       .hero-spacer { display: none; }
-      .hero-message { border-right: none; border-top: 5px solid #d35400; }
+      
       .service-row { flex-direction: column; text-align: center; padding: 15px;}
-      .service-img { margin-right: 0; margin-bottom: 10px; flex: 0 0 auto;}
-      .img-small img { width: 60%; }
+      .service-img { margin-right: 0; margin-bottom: 10px; flex: 0 0 auto; width: 100%;}
+      
+      /* タカシさん指定の画像縮小サイズ */
+      .row-exterior .service-img img { width: 80%; } /* オクタ 80% */
+      .row-investigation .service-img img { width: 50%; } /* 調査ウサギ 50% */
+      .row-global .service-img img { width: 25%; } /* L 25% */
+      .service-img-right { margin-left: 0; margin-top: 15px; flex: 0 0 auto; width: 25%; } /* 特大ウサギ(右側) 25% */
+      .service-img-right img { width: 100%; }
+
       .service-text h2 { display: block; border-bottom: none; }
       .service-text h2::after { content: ''; display: block; width: 50px; height: 2px; background: #ccc; margin: 5px auto 0; }
-      .service-img-right { margin-left: 0; margin-top: 15px; flex: 0 0 auto; width: 80%; max-width: 250px; }
-      .price-section { padding: 20px 15px; }
       
+      .price-section { padding: 20px 15px; }
       .price-with-img { flex-direction: column; }
-      /* スマホ表示でも料金表の画像を少し大きく（60px → 80px） */
       .price-img { margin: 0 auto 10px auto; width: 80px; }
+
+      .news-section { padding: 10px 10px; }
     }
   </style>
 </head>
@@ -164,6 +217,36 @@
     </div>
   </section>
 
+  <div class="news-section">
+    <div class="news-list">
+      <div class="news-item">
+        <img src="https://drive.google.com/thumbnail?id=1XtLu1FOM1lcTxYOh38P21_RVJDBkUKp4&sz=w1000" alt="ウサギ" class="news-icon">
+        <div class="news-text">
+          💡 蛍光灯からLED交換承ります。
+        </div>
+      </div>
+      <div class="news-item">
+        <img src="https://drive.google.com/thumbnail?id=16vHznh5MpOqNP3fs3Ag3mlFQn7PVtaQF&sz=w1000" alt="パウルル" class="news-icon">
+        <div class="news-text">
+          🏠 窓リノベ、住宅改修補助金相談うけたまわります。
+          <a href="#" class="news-link">詳細はこちら</a>
+        </div>
+      </div>
+      <div class="news-item">
+        <img src="https://drive.google.com/thumbnail?id=1Oe6yWIKIq_BXG1gdMDbS8hPrVcspPcZq&sz=w1000" alt="オクタ" class="news-icon">
+        <div class="news-text">
+          🌸 春の住まい支度
+        </div>
+      </div>
+      <div class="news-item">
+        <img src="https://drive.google.com/thumbnail?id=12Hjbx1tjV5toKClfStjoEj7as8sdQrXX&sz=w1000" alt="L" class="news-icon">
+        <div class="news-text">
+          🌐 外国籍の方からのご相談、承ります (English / 中文)
+          <a href="#" class="news-link">For Non-Japanese Speakers</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
 
     <div class="service-row row-exterior">
