@@ -35,9 +35,9 @@
     .faq-instruction { color: #d35400; font-weight: bold; font-size: 1.3rem; margin: 10px 0; animation: pulse 2s infinite; }
     @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
 
-    /* 開閉式アコーディオン */
-    .faq-grid { margin-bottom: 50px; }
-    details { background: #fff; border: 1px solid #ddd; margin-bottom: 15px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    /* 🛠️ 開閉式アコーディオン（2列配置に修正） */
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; margin-bottom: 50px; }
+    details { background: #fff; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
     summary { padding: 15px 20px; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: space-between; list-style: none; outline: none; background: #fcfcfc; }
     summary::-webkit-details-marker { display: none; }
     
@@ -70,6 +70,8 @@
     .seo-keywords { margin-top: 50px; padding: 20px; border-top: 1px solid #eee; font-size: 0.65rem; color: #ccc; text-align: justify; line-height: 1.4; }
 
     footer { text-align: center; padding: 40px; border-top: 1px solid #7a7a7a; font-size: 0.9rem; color: #888; }
+    
+    /* スマホ表示時は1列にする */
     @media (max-width: 650px) { .faq-grid, .ai-grid { grid-template-columns: 1fr; } .hero-title { font-size: 1.8rem; } }
   </style>
 </head>
