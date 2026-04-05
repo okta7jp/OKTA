@@ -19,14 +19,16 @@
     .message-box { background: #fff; padding: 25px; border-left: 10px solid #d35400; border: 1px solid #ddd; margin-bottom: 30px; }
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 40px; }
     .faq-item { border: 1px solid #eee; border-radius: 4px; background: #fff; }
-    .faq-title { padding: 12px; background-color: #f9f9f9; cursor: pointer; font-weight: bold; font-size: 0.95rem; }
+    .faq-title { padding: 12px; background-color: #f9f9f9; cursor: pointer; font-weight: bold; font-size: 0.95rem; position: relative; }
+    .faq-title::after { content: '＋'; position: absolute; right: 10px; }
     .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s; }
     .faq-item.open .faq-content { max-height: 3000px; }
     .faq-content ul { padding: 15px; list-style: none; margin: 0; font-size: 0.85rem; }
+    .faq-content li { border-bottom: 1px dashed #eee; padding-bottom: 10px; margin-bottom: 10px; }
 
     /* 🖤 漆黒・極細の問い合わせバー */
     .black-contact-section { background: #000; color: #fff; padding: 20px; text-align: center; border-radius: 4px; margin-top: 40px; }
-    .contact-link { color: #fff; text-decoration: none; font-weight: bold; border: 1px solid #fff; padding: 8px 30px; border-radius: 2px; }
+    .contact-link { color: #fff; text-decoration: none; font-weight: bold; border: 1px solid #fff; padding: 6px 30px; border-radius: 2px; font-size: 0.9rem; }
 
     @media (max-width: 650px) { .faq-grid { grid-template-columns: 1fr; } }
   </style>
@@ -39,7 +41,7 @@
 
   <div class="message-box">
     <h2>"I support everything except family quarrels."</h2>
-    <p>Professional maintenance for traditional houses. Licensed craftsmen.</p>
+    <p>Professional maintenance for traditional houses with 50 years of experience. Licensed craftsmen.</p>
   </div>
 
   <div class="faq-grid">
@@ -51,7 +53,7 @@
       </ul></div>
     </div>
     <div class="faq-item">
-        <div class="faq-title">More categories (40 items total)</div>
+        <div class="faq-title">More Categories</div>
         <div class="faq-content"><ul>
             <li>Garbage rules? <span style="display:block; color:#666;">垃圾分类太繁琐。</span></li>
             <li>Fusuma stuck? <span style="display:block; color:#666;">推拉门变得很难拉。</span></li>
@@ -60,7 +62,7 @@
   </div>
 
   <div class="black-contact-section">
-    <p style="margin-bottom:15px;">TRUSTED PARTNERS: LIXIL / DAIKEN / Panasonic</p>
+    <p style="margin-bottom:15px; font-size: 0.8rem;">TRUSTED PARTNERS: LIXIL / DAIKEN / Panasonic</p>
     <a href="mailto:good@okta7.com" class="contact-link">✉ CONTACT US</a>
   </div>
   <a href="index.html" style="display: block; text-align: center; margin-top: 20px; color: #888; text-decoration: none;">← Back to Japanese Page</a>
