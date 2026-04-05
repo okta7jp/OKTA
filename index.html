@@ -24,7 +24,7 @@
     .header-logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
     .header-sub { font-size: 1.1rem; color: #666; margin-top: 3px; line-height: 1.4; }
 
-    /* 集合写真エリア */
+    /* 集合写真エリア（PC） */
     .hero {
       background-color: #fafafa;
       padding: 20px 20px;
@@ -57,7 +57,7 @@
     .hero-image img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: block; }
     .hero-spacer { flex: 1; }
 
-    /* 🐰 お家の御用聞き（旬のお知らせ）セクション */
+    /* 🐰 お家の御用聞き（旬のお知らせ）セクション（PC・スマホ共通：画像なしスッキリ版） */
     .news-section {
       padding: 10px 20px;
       background-color: #ffffff; /* 真っ白 */
@@ -78,25 +78,20 @@
     .news-item:last-child {
       border-bottom: none;
     }
-    .news-icon {
-      width: 60px;
-      height: auto;
-      margin-right: 15px;
-      flex-shrink: 0;
-      border-radius: 4px;
-    }
+    /* 画像を削除したためアイコンの設定も削除 */
     .news-text {
       font-size: 1rem;
       color: #333;
       line-height: 1.5;
       font-weight: bold;
+      flex: 1; /* テキストを横幅いっぱいに */
     }
     .news-link {
       color: #0056b3;
       text-decoration: underline;
       font-size: 0.85rem;
-      display: block;
-      margin-top: 5px;
+      display: inline; /* テキストの後ろに続ける */
+      margin-left: 10px;
       font-weight: normal;
     }
 
@@ -162,36 +157,71 @@
     .footer-copy { font-size: 0.9rem; margin-top: 10px; }
 
     /* =========================================
-       スマートフォン向け設定 (画面幅650px以下)
+        スマートフォン向け設定 (画面幅650px以下)
        ========================================= */
     @media (max-width: 650px) {
-      /* 集合写真とメッセージをスマホでも横並びに */
-      .hero-inner { flex-direction: row; gap: 10px; align-items: center; }
-      .hero-message-wrapper { padding-right: 0; justify-content: flex-start; flex: 1; }
-      .hero-message { border-right: none; padding: 10px; box-shadow: none; border-left: 4px solid #d35400; }
-      .hero-message h1 { font-size: 0.95rem; }
-      .hero-badge { font-size: 0.75rem; padding: 2px 8px; margin-bottom: 5px; }
-      .hero-image { flex: 0 0 45%; max-width: 180px; }
+      /* 1. 集合写真エリア：スマホでも横並びを維持 */
+      .hero-inner { flex-direction: row; gap: 10px; align-items: center; justify-content: space-between; }
+      
+      /* 左側：メッセージ枠（タカシさん指定：小さくていい） */
+      .hero-message-wrapper { padding-right: 0; flex: 0 0 35%; /* 横幅を35%に抑える */ justify-content: flex-start; }
+      .hero-message { border-right: none; padding: 8px; box-shadow: none; border-left: 3px solid #d35400; }
+      .hero-message h1 { font-size: 0.85rem; line-height: 1.3; }
+      .hero-badge { font-size: 0.7rem; padding: 1px 6px; margin-bottom: 3px; }
+      
+      /* 右側：集合写真（タカシさん指定：もうちょっと大きく） */
+      .hero-image { flex: 0 0 60%; /* 横幅を60%に拡大 */ max-width: none; order: 2; /* 右側に配置 */ }
       .hero-spacer { display: none; }
-      
-      .service-row { flex-direction: column; text-align: center; padding: 15px;}
-      .service-img { margin-right: 0; margin-bottom: 10px; flex: 0 0 auto; width: 100%;}
-      
-      /* タカシさん指定の画像縮小サイズ */
-      .row-exterior .service-img img { width: 80%; } /* オクタ 80% */
-      .row-investigation .service-img img { width: 50%; } /* 調査ウサギ 50% */
-      .row-global .service-img img { width: 25%; } /* L 25% */
-      .service-img-right { margin-left: 0; margin-top: 15px; flex: 0 0 auto; width: 25%; } /* 特大ウサギ(右側) 25% */
-      .service-img-right img { width: 100%; }
 
-      .service-text h2 { display: block; border-bottom: none; }
-      .service-text h2::after { content: ''; display: block; width: 50px; height: 2px; background: #ccc; margin: 5px auto 0; }
-      
-      .price-section { padding: 20px 15px; }
-      .price-with-img { flex-direction: column; }
-      .price-img { margin: 0 auto 10px auto; width: 80px; }
+      /* 2. お家の御用聞きセクション：文字を少し小さくしてスッキリさせる */
+      .news-section { padding: 5px 15px; }
+      .news-text { font-size: 0.9rem; }
+      .news-link { font-size: 0.8rem; margin-left: 5px; display: inline-block;}
 
-      .news-section { padding: 10px 10px; }
+      /* 3. 各紹介コーナー：スマホでも横並び（画像左、テキスト右）を維持し、画像を縮小 */
+      .service-row { flex-direction: row; flex-wrap: nowrap; align-items: flex-start; text-align: left; padding: 15px 10px;}
+      
+      /* 画像コンテナの共通設定 */
+      .service-img { margin-right: 10px; margin-bottom: 0; flex: 0 0 20%; /* 画像枠を全体の20%に抑える */ text-align: center; }
+      .service-img .ai-role { font-size: 0.7rem; }
+
+      /* タカシさん指定の個別画像縮小サイズ（!importantで強制適用） */
+      
+      /* オクタ ( exterior ): 80% */
+      .row-exterior .service-img img { width: 80% !important; max-width: 80px; } 
+
+      /* ウサギ ( investigation ): 半分 */
+      .row-investigation .service-img img { width: 50% !important; max-width: 60px; }
+      /* 右側の特大ウサギ (イメージ): 1/4 */
+      .service-img-right { margin-left: 0; margin-top: 0; flex: 0 0 25%; /* 25%幅 */ order: 3; }
+      .service-img-right img { width: 100% !important; max-width: 100px; }
+
+      /* パウルル ( trust ): 半分 */
+      .row-trust .service-img img { width: 50% !important; max-width: 60px; }
+
+      /* Lちゃん ( global ): 1/4 */
+      .row-global .service-img img { width: 25% !important; max-width: 40px; }
+
+      /* テキスト部分の共通設定 */
+      .service-text { flex: 1; min-width: 0; /* 折り返しを強制 */ }
+      .service-text h2 { font-size: 1.2rem; display: inline-block; border-bottom: 2px solid #ccc; padding-bottom: 2px; }
+      .service-text h2::after { display: none; /* 中央線を消す */ }
+      .service-text p { font-size: 0.95rem; line-height: 1.5; }
+      .text-en { font-size: 0.8rem; }
+      .qualifications { font-size: 0.85rem; padding: 8px; }
+
+      /* お問い合わせ・料金セクション */
+      .contact-ai-img { width: 60px; }
+      .contact-btn { padding: 10px 20px; font-size: 1rem; }
+      
+      .price-section { padding: 20px 10px; }
+      .price-section h2 { font-size: 1.3rem; }
+      .price-box h3 { font-size: 1.1rem; }
+      .price-box ul { font-size: 0.95rem; }
+      .price-box p { font-size: 0.95rem; }
+      
+      .price-with-img { flex-direction: row; gap: 10px; }
+      .price-img { flex: 0 0 60px; margin: 0; }
     }
   </style>
 </head>
@@ -220,26 +250,22 @@
   <div class="news-section">
     <div class="news-list">
       <div class="news-item">
-        <img src="https://drive.google.com/thumbnail?id=1XtLu1FOM1lcTxYOh38P21_RVJDBkUKp4&sz=w1000" alt="ウサギ" class="news-icon">
         <div class="news-text">
           💡 蛍光灯からLED交換承ります。
         </div>
       </div>
       <div class="news-item">
-        <img src="https://drive.google.com/thumbnail?id=16vHznh5MpOqNP3fs3Ag3mlFQn7PVtaQF&sz=w1000" alt="パウルル" class="news-icon">
         <div class="news-text">
           🏠 窓リノベ、住宅改修補助金相談うけたまわります。
           <a href="#" class="news-link">詳細はこちら</a>
         </div>
       </div>
       <div class="news-item">
-        <img src="https://drive.google.com/thumbnail?id=1Oe6yWIKIq_BXG1gdMDbS8hPrVcspPcZq&sz=w1000" alt="オクタ" class="news-icon">
         <div class="news-text">
           🌸 春の住まい支度
         </div>
       </div>
       <div class="news-item">
-        <img src="https://drive.google.com/thumbnail?id=12Hjbx1tjV5toKClfStjoEj7as8sdQrXX&sz=w1000" alt="L" class="news-icon">
         <div class="news-text">
           🌐 外国籍の方からのご相談、承ります (English / 中文)
           <a href="#" class="news-link">For Non-Japanese Speakers</a>
@@ -303,7 +329,7 @@
       <div class="service-img img-small">
         <img src="https://drive.google.com/thumbnail?id=12Hjbx1tjV5toKClfStjoEj7as8sdQrXX&sz=w1000" alt="人間を厳しく取り締まる秘書 L">
         <div class="ai-role">
-          人間を厳しく取り締まる秘書AI<br>L [エル]
+          人間を厳しく取りを取り締まる秘書AI<br>L [エル]
         </div>
       </div>
       <div class="service-text">
