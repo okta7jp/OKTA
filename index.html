@@ -1,137 +1,79 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OKTA オクノ工務店 | KYOTO NISHINOMIYA JAPAN</title>
+  <title>Non-Japanese Support | OKTA Renovations Kyoto</title>
   <style>
-    body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; background-color: #fcfcfc; line-height: 1.8; }
-    header { background-color: #fff; border-bottom: 2px solid #333; padding: 15px 20px; text-align: center; }
-    .header-logo { font-size: 1.5rem; font-weight: bold; }
-    .header-sub { font-size: 1rem; color: #666; margin-top: 3px; }
+    body { margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #fcfcfc; color: #333; line-height: 1.8; }
+    header { background-color: #fff; border-bottom: 2px solid #333; padding: 20px; text-align: center; }
+    .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+    .hero-en { background-color: #333; color: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; margin-bottom: 40px; }
+    .hero-en h1 { margin: 0; font-size: 1.8rem; }
+    .hero-en p { margin: 10px 0 0; opacity: 0.9; }
 
-    .hero { background-color: #fafafa; padding: 20px; border-bottom: 1px solid #eee; }
-    .hero-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .hero-message { background: #fff; padding: 12px; border-radius: 8px; border-left: 5px solid #d35400; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    .hero-image img { width: 100%; max-width: 500px; height: auto; border-radius: 8px; display: block; }
+    .service-card { background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #ddd; border-top: 4px solid #d35400; margin-bottom: 30px; display: flex; align-items: center; }
+    .card-img { flex: 0 0 110px; margin-right: 25px; }
+    .card-img img { width: 100%; height: auto; border-radius: 8px; border: 2px solid #eee; }
+    .card-text { flex: 1; }
+    .card-text h2 { margin: 0 0 10px; font-size: 1.4rem; color: #222; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
 
-    .news-section { padding: 10px 20px; background-color: #ffffff; max-width: 800px; margin: 20px auto; }
-    .news-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
-    .news-link-btn { color: #d35400; text-decoration: underline; font-weight: bold; margin-left: 10px; }
+    .faq-en { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 40px; }
+    .faq-en h3 { border-left: 5px solid #333; padding-left: 15px; margin-bottom: 20px; }
+    .faq-en ul { padding-left: 20px; }
+    .faq-en li { margin-bottom: 10px; font-weight: bold; }
 
-    /* 🖤 漆黒・極細の問い合わせバー（汚い色を排除） */
-    .slim-contact-bar { max-width: 800px; margin: 20px auto 15px; padding: 0 15px; }
-    .slim-contact-link { display: block; background: #000; color: #fff; text-decoration: none; text-align: center; padding: 6px; border-radius: 2px; font-weight: bold; font-size: 0.85rem; letter-spacing: 2px; }
-
-    .faq-section { background-color: #ffffff; padding: 15px; max-width: 800px; margin: 0 auto 20px; border: 1px solid #ddd; border-radius: 4px; }
-    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .faq-title { padding: 10px; background-color: #fafafa; cursor: pointer; position: relative; font-weight: bold; font-size: 0.85rem; }
-    .faq-title::after { content: '＋'; position: absolute; right: 10px; }
-    .faq-item.open .faq-title::after { content: '－'; }
-    .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.25s; }
-    .faq-item.open .faq-content { max-height: 1000px; }
-    .faq-content ul { padding: 10px 15px; list-style: none; margin: 0; font-size: 0.82rem; color: #555; }
-    .faq-content li { border-bottom: 1px dashed #eee; padding: 6px 0; }
-
-    .container { max-width: 800px; margin: 0 auto; padding: 0 20px 30px 20px; }
-    .service-row { display: flex; align-items: flex-start; background: #fff; padding: 20px; margin-bottom: 30px; border-radius: 8px; border: 1px solid #ddd; border-top: 4px solid #333; }
-    .service-img { flex: 0 0 110px; text-align: center; margin-right: 20px; }
-    .service-img img { width: 100%; height: auto; border-radius: 8px; border: 2px solid #eee; }
-    .service-img .ai-role { font-size: 0.8rem; color: #777; margin-top: 5px; font-weight: bold; }
-    .service-text { flex: 1; }
-    .service-text h2 { font-size: 1.5rem; margin: 0 0 10px 0; border-bottom: 2px solid #ccc; display: inline-block; }
-    .highlight { font-weight: bold; color: #d35400; }
-    .service-img-right { flex: 0 0 110px; margin-left: 20px; }
-    .service-img-right img { width: 100%; border-radius: 8px; border: 2px solid #eee; }
-
-    .row-exterior { border-top-color: #2ecc71; }
-    .row-investigation { border-top-color: #e67e22; }
-    .row-trust { border-top-color: #34495e; background-color: #fdfbf7;}
-    .row-global { border-top-color: #3498db; background-color: #f4f6f7;}
-
-    .qualifications { font-size: 0.9rem; color: #555; background: #fff; padding: 12px; border: 1px dashed #ccc; margin-top: 10px; }
-    .link-btns { display: flex; gap: 8px; margin-top: 15px; flex-wrap: wrap; }
-    .link-btn { padding: 8px 15px; background-color: #eee; color: #333; text-decoration: none; font-size: 0.85rem; border-radius: 20px; border: 1px solid #ccc; }
-
-    .price-section { background: #fff; padding: 30px; margin-bottom: 30px; border-radius: 8px; border: 1px solid #ddd; }
-    .price-with-img { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px; }
-
-    footer { text-align: center; padding: 20px; color: #777; font-size: 0.8rem; }
-    .seo-keywords { font-size: 0.5rem; color: #eee; text-align: justify; padding: 0 20px; }
-
-    @media (max-width: 650px) { .faq-grid { grid-template-columns: 1fr; } .hero-inner { flex-direction: row; } .service-img, .service-img-right { flex: 0 0 80px; } }
+    .back-btn { display: inline-block; margin-top: 20px; text-decoration: none; color: #666; font-size: 0.9rem; }
+    .contact-btn { display: inline-block; background: #333; color: #fff; text-decoration: none; padding: 15px 30px; font-size: 1.1rem; border-radius: 5px; margin-top: 20px; font-weight: bold; }
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-logo">OKTA オクノ工務店</div>
-    <div class="header-sub">京都 宇治 西宮甲東園 | Home Renovation</div>
-  </header>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-message"><h1>現場をサポートする<br>AI アシスタントチーム</h1></div>
-      <div class="hero-image"><img src="https://drive.google.com/thumbnail?id=1uTIk_SfceIXdKN_o0kCUq8d_voJgHAGb&sz=w1000" alt="OKTA AI"></div>
-    </div>
-  </section>
+<header>
+  <div style="font-weight: bold; font-size: 1.5rem;">OKTA Renovations Kyoto</div>
+  <div style="color: #666;">English / Chinese Support Available</div>
+</header>
 
-  <div class="news-section">
-    <div class="news-item"><div class="news-text">💡 蛍光灯からLED交換承ります。</div></div>
-    <div class="news-item"><div class="news-text">🌸 春の住まい支度</div></div>
-    <div class="news-item"><div class="news-text">🌐 For Non-Japanese Speakers <a href="english.html" class="news-link-btn">👉 TAP HERE</a></div></div>
+<div class="container">
+  <div class="hero-en">
+    <h1>Support for Your Life in Japan</h1>
+    <p>"We support all house troubles."</p>
   </div>
 
-  <div class="slim-contact-bar">
-    <a href="mailto:good@okta7.com" class="slim-contact-link">✉ メールで相談してみる</a>
-  </div>
-
-  <div class="faq-section">
-    <h2>家のお悩み「あるある」事典</h2>
-    <div class="faq-grid">
-      <div class="faq-item"><div class="faq-title">1. 水回り</div><div class="faq-content"><ul><li>蛇口のじんわり水漏れ。忘れた頃に「ポタッ」と音がする</li><li>タイル風呂が冬場は冷たくて寒い</li><li>シンク下がカビ臭い気がする</li></ul></div></div>
-      <div class="faq-item"><div class="faq-title">2. 電気・設備</div><div class="faq-content"><ul><li>インターホン画面が映らない</li><li>防犯カメラの付け方が分からない</li><li>Wi-Fi配線がぐちゃぐちゃ</li></ul></div></div>
-      <div class="faq-item"><div class="faq-title">3. 建具・内装</div><div class="faq-content"><ul><li>ドアノブがグラグラ</li><li>引き戸が重くて「ゴロゴロ」音がする</li><li>猫が引っ掻いた壁紙を直したい</li></ul></div></div>
-      <div class="faq-item"><div class="faq-title">4. 外回り・その他</div><div class="faq-content"><ul><li>重い家具を2階から下ろせない</li><li>庭の木が伸び放題</li><li>組み立て家具で心が折れた</li></ul></div></div>
+  <div class="service-card">
+    <div class="card-img"><img src="https://drive.google.com/thumbnail?id=1Oe6yWIKIq_BXG1gdMDbS8hPrVcspPcZq&sz=w1000" alt="Okta"></div>
+    <div class="card-text">
+      <h2>SHOJI / TATAMI / FUSUMA</h2>
+      <p>Traditional Japanese house repairs. We fix broken paper screens (Shoji) and sliding doors. Modern wabi-sabi style available.</p>
     </div>
   </div>
 
-  <div class="container">
-    <div class="service-row row-exterior">
-      <div class="service-img"><img src="https://drive.google.com/thumbnail?id=1Oe6yWIKIq_BXG1gdMDbS8hPrVcspPcZq&sz=w1000"><div class="ai-role">オクタ</div></div>
-      <div class="service-text"><h2>家にかかわる工事、相談 OK</h2><p class="highlight">小～大規模修繕/ 内外装/ 水回り / 見積り</p></div>
-    </div>
-
-    <div class="service-row row-investigation">
-      <div class="service-img"><img src="https://drive.google.com/thumbnail?id=1XtLu1FOM1lcTxYOh38P21_RVJDBkUKp4&sz=w1000"><div class="ai-role">ウサギ</div></div>
-      <div class="service-text"><h2>調査 相談・DIYの助け舟</h2><p><span class="highlight">相談調査 OK / DIYの技術サポート OK</span></p><p style="font-size: 0.9rem;">ネットで買った機器の付け方や、家具組み立てのリカバリーもお手伝いします。</p></div>
-      <div class="service-img-right"><img src="https://drive.google.com/thumbnail?id=16oUM-jrqETo-xV0_a7nOZ3sdKwlqye6O&sz=w1000"></div>
-    </div>
-
-    <div class="service-row row-trust">
-      <div class="service-img"><img src="https://drive.google.com/thumbnail?id=16vHznh5MpOqNP3fs3Ag3mlFQn7PVtaQF&sz=w1000"><div class="ai-role">パウルル</div></div>
-      <div class="service-text"><h2>京都で約50年</h2><p><span class="highlight">既存顧客とその紹介を中心に事業をしております。</span></p><div class="qualifications">所有資格：1級建築施工管理技士 ／ 2級建築士 ／ 建築事務所（京都府登録） ／ 石綿調査士・作業主任 ／ 木造耐震診断士 ／ 電気工事士 ／ ガス可とう管監理者ほか</div></div>
-    </div>
-
-    <div class="service-row row-global">
-      <div class="service-img"><img src="https://drive.google.com/thumbnail?id=12Hjbx1tjV5toKClfStjoEj7as8sdQrXX&sz=w1000"><div class="ai-role">人間を取り締まる<br>鬼から生まれた 鬼<br>L [エル]</div></div>
-      <div class="service-text"><h2>non-JAPANESE OK</h2><p class="highlight">TATAMI 畳 / KAWARA 瓦 / SYOUJI 障子 / HUSUMA ふすま</p><div class="link-btns"><a href="https://translate.google.co.jp/" class="link-btn">Translate</a><a href="https://chat.openai.com/" class="link-btn">ChatGPT</a><a href="https://claude.ai/" class="link-btn">Claude</a><a href="https://gemini.google.com/" class="link-btn">Gemini</a></div></div>
-    </div>
-
-    <div class="price-section">
-      <h2>料金の目安と、お見積り</h2>
-      <div class="price-with-img">
-        <div class="price-img"><img src="https://drive.google.com/thumbnail?id=1gb_TGSI3CzhZ7LMafOfFwz4OUZRYZW0Q&sz=w1000" style="width:110px;"></div>
-        <div class="price-text"><h3>■ ちょこっとサポート</h3><p>￥1,000 ～ ￥3,900 程度。ネジ締め、家具移動など。</p></div>
-      </div>
-      <div class="price-important"><h4>【お見積り・著作権について】</h4><p>ダブルチェックのご相談はお受けしますが、適正である場合、実際の工事はそちらの業者様へご依頼ください。相見積もりは現地調査費用を頂戴します。見積書は「著作物」であり他社への提示は固くお断りします。</p></div>
+  <div class="service-card">
+    <div class="card-img"><img src="https://drive.google.com/thumbnail?id=1gb_TGSI3CzhZ7LMafOfFwz4OUZRYZW0Q&sz=w1000" alt="Usagi"></div>
+    <div class="card-text">
+      <h2>Equipment Support</h2>
+      <p>Having trouble with your AC, water heater, or toilet? We help you understand and repair Japanese home equipment.</p>
     </div>
   </div>
 
-  <footer><div class="footer-copy">&copy; 2026 OKTA オクノ工務店</div><div class="seo-keywords">宇治市 工務店 家の修理 蛇口交換 網戸 畳 障子 リフォーム 京都 西宮</div></footer>
+  <div class="faq-en">
+    <h3>Common Troubles We Solve:</h3>
+    <ul>
+      <li>"The paper screen (Shoji) is torn."</li>
+      <li>"I don't know how to use the air conditioner remote."</li>
+      <li>"Water is leaking from the kitchen faucet."</li>
+      <li>"The neighborhood garbage rules are too difficult."</li>
+      <li>"I bought furniture but cannot assemble it."</li>
+    </ul>
+    <p style="font-style: italic; color: #666;">*We use AI translation tools for smooth communication.</p>
+  </div>
 
-  <script>
-    const faqTitles = document.querySelectorAll('.faq-title');
-    faqTitles.forEach(title => { title.addEventListener('click', () => { title.parentNode.classList.toggle('open'); }); });
-  </script>
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="mailto:good@okta7.com" class="contact-btn">✉ Contact Us via Email</a>
+    <br>
+    <a href="index.html" class="back-btn">← Back to Japanese Page</a>
+  </div>
+</div>
+
 </body>
 </html>
