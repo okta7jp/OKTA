@@ -12,9 +12,10 @@
     header { background-color: #fff; border-bottom: 4px solid #4d4d4d; padding: 20px; text-align: center; }
     .header-logo { font-size: 1.8rem; font-weight: bold; color: #4d4d4d; letter-spacing: 1px; }
     
+    /* 全体の枠を少し広げました（画像1.5倍に対応するため） */
     .container { max-width: 900px; margin: 0 auto; padding: 30px 20px; }
     
-    /* 🛠️ トップ：4枚画像 横4列（repeat(4, 110px)に変更） */
+    /* 🛠️ トップ画像：サイズを1.5倍（165px）に変更 */
     .hero-section { text-align: center; margin-bottom: 50px; }
     .hero-grid { display: grid; grid-template-columns: repeat(4, 165px); justify-content: center; gap: 20px; margin-bottom: 25px; }
     .hero-img { width: 165px; height: auto; border: 1px solid #7a7a7a; }
@@ -29,19 +30,17 @@
     .slim-contact-bar { max-width: 800px; margin: 0 auto 40px; }
     .slim-contact-link { display: block; background: #4d4d4d; color: #fff; text-decoration: none; text-align: center; padding: 10px; border-radius: 2px; font-weight: bold; font-size: 1.1rem; letter-spacing: 2px; }
 
-    /* 📦 40項目事典の案内エリア */
+    /* 📦 開閉式アコーディオン（2列配置） */
     .faq-header-area { text-align: center; margin-bottom: 30px; }
     .faq-main-title { font-size: 1.8rem; color: #4d4d4d; border-bottom: 3px solid #d35400; display: inline-block; padding-bottom: 5px; margin: 0 0 10px 0; }
     .faq-instruction { color: #d35400; font-weight: bold; font-size: 1.3rem; margin: 10px 0; animation: pulse 2s infinite; }
     @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
 
-    /* 🛠️ 開閉式アコーディオン（2列配置） */
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; margin-bottom: 50px; }
     details { background: #fff; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
     summary { padding: 15px 20px; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: space-between; list-style: none; outline: none; background: #fcfcfc; }
     summary::-webkit-details-marker { display: none; }
     
-    /* 行書体アイコン */
     .kanji-icon { font-size: 2.5rem; font-family: 'Yuji Syuku', serif; font-weight: normal; line-height: 1; }
     .icon-water { color: #00bfff; }
     .icon-electric { color: #ff8c00; }
@@ -52,7 +51,6 @@
     .faq-content ul { padding: 0; list-style: none; margin: 15px 0 0; }
     .faq-content li { margin-bottom: 25px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px; }
     
-    /* 3ヶ国語のスタイル */
     .lang-jp { display: block; font-size: 0.85rem; color: #888; margin-bottom: 4px; }
     .lang-en { display: block; font-weight: bold; color: #111; line-height: 1.4; margin-bottom: 4px; }
     .lang-cn { display: block; color: #666; font-style: italic; font-size: 0.95rem; }
@@ -65,17 +63,17 @@
     .member-name-area { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; }
     .member-name { font-size: 1.4rem; font-weight: bold; color: #d35400; }
     .member-kanji { font-family: 'Yuji Syuku', serif; font-size: 2.2rem; color: #4d4d4d; font-weight: normal; }
-    .member-desc { font-size: 1rem; color: #666; }
+    .member-desc { font-size: 1rem; color: #666; line-height: 1.4; }
 
     .seo-keywords { margin-top: 50px; padding: 20px; border-top: 1px solid #eee; font-size: 0.65rem; color: #ccc; text-align: justify; line-height: 1.4; }
 
     footer { text-align: center; padding: 40px; border-top: 1px solid #7a7a7a; font-size: 0.9rem; color: #888; }
     
-    /* 🛠️ スマホ表示時は画像を2x2に戻し、他は1列にする */
+    /* スマホ表示の調整（@media部分） */
     @media (max-width: 800px) { 
-      .hero-grid { grid-template-columns: repeat(2, 165px); }
+      .hero-grid { grid-template-columns: repeat(2, 165px); } 
       .faq-grid, .ai-grid { grid-template-columns: 1fr; } 
-      .hero-title { font-size: 1.8rem; } 
+      .hero-title { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -87,10 +85,10 @@
   
   <section class="hero-section">
     <div class="hero-grid">
-      <img src="https://drive.google.com/thumbnail?id=1Gm3MncXYmycEpBSGzW4dR0tq6hOncT3W&sz=w200" class="hero-img" alt="Hero Image 1">
-      <img src="https://drive.google.com/thumbnail?id=1TIdL1yPZ6jlHSE2RBIv-7XwkwzwOE6H7&sz=w200" class="hero-img" alt="Hero Image 2">
-      <img src="https://drive.google.com/thumbnail?id=　　　　　　g&sz=w200" class="hero-img" alt="Hero Image 3">
-      <img src="https://drive.google.com/thumbnail?id=　　　　　　&sz=w200" class="hero-img" alt="Hero Image 4">
+      <img src="https://drive.google.com/thumbnail?id=16oUM-jrqETo-xV0_a7nOZ3sdKwlqye6O&sz=w500" class="hero-img" alt="Hero Image 1">
+      <img src="https://drive.google.com/thumbnail?id=1gb_TGSI3CzhZ7LMafOfFwz4OUZRYZW0Q&sz=w500" class="hero-img" alt="Hero Image 2">
+      <img src="https://drive.google.com/thumbnail?id=1yCLoClbQyPbJUgxi_ptWVxZnPQpQK7lg&sz=w500" class="hero-img" alt="Hero Image 3">
+      <img src="https://drive.google.com/thumbnail?id=1UkOJxly4mDZtEfgWwNpYmmQPmFv1Vuok&sz=w500" class="hero-img" alt="Hero Image 4">
     </div>
     <h1 class="hero-title">Traditional Japanese Home Support</h1>
   </section>
@@ -108,7 +106,7 @@
   </section>
 
   <div class="slim-contact-bar">
-    <a href="https://forms.gle/i4ueZvc1SCgS8n279" class="slim-contact-link" target="_blank">✉ INQUIRY / CONSULTATION</a>
+    <a href="https://forms.gle/gbFJ3wszTr25hp286" class="slim-contact-link" target="_blank">✉ INQUIRY / CONSULTATION</a>
   </div>
 
   <div class="faq-header-area">
@@ -129,7 +127,7 @@
         <li><span class="lang-jp">浴室の床の目地にピンク色のカビが生えてしまう</span><span class="lang-en">"Bathroom floor grout easily grows pink mold."</span><span class="lang-cn">浴室地板缝隙里很快就长出了粉红霉菌。</span></li>
         <li><span class="lang-jp">トイレ詰まりのスッポン、どこで買って何と言うか</span><span class="lang-en">"Where to buy a plunger and how to ask for it in Japanese?"</span><span class="lang-cn">马桶堵了不知道去哪里买皮搋子，日语也不知道怎么说。</span></li>
         <li><span class="lang-jp">洗面台のホースが伸びることに気づかず不便だった</span><span class="lang-en">"Didn't realize the faucet pulled out like a shower hose."</span><span class="lang-cn">没发现水龙头可以拉出来，一直以很难受姿势洗脸。</span></li>
-        <li><span class="lang-jp">排水口の構造が複雑で掃除が憂鬱</span><span class="lang-en">"The drain hair catcher is too complicated to clean."</span><span class="lang-cn">浴室排水口收集器结构太复杂，每次清理都头疼。</span></li>
+        <li><span class="lang-jp">排水口の構造が複雑で掃除が憂鬱</span><span class="lang-en">"The drain hair catcher is too complicated to clean."</span><span class="lang-cn">浴室排水口收集器结构太复杂，每次清理都頭疼。</span></li>
       </ul></div>
     </details>
 
@@ -155,13 +153,13 @@
         <li><span class="lang-jp">ふすまが滑らないが直し方がわからず蛮力を使う</span><span class="lang-en">"Fusuma stuck, don't know how to fix, only use force."</span><span class="lang-cn">推拉门变得很难拉，不知道怎么修只能用蛮力。</span></li>
         <li><span class="lang-jp">網戸の正しい開け閉めを知らず虫が入ってくる</span><span class="lang-en">"Didn't know screen doors have a correct side, bugs get in."</span><span class="lang-cn">不知道纱窗有固定的方向，总是留缝，进了很多虫子。</span></li>
         <li><span class="lang-jp">クッションフロアに重い家具の跡が凹んで残っている</span><span class="lang-en">"The soft floor is dented by heavy furniture."</span><span class="lang-cn">地板是软的，放了重家具后留下了很深的凹痕。</span></li>
-        <li><span class="lang-jp">押し入れの使い方がわからず荷物を適当に押し込んでいる</span><span class="lang-en">"Don't know how to use 'Oshiire' correctly."</span><span class="lang-cn">不懂和室的‘壁橱’该怎么用，里面随便塞满了纸箱杂物。</span></li>
-        <li><span class="lang-jp">和室の砂壁に触れると砂が落ちてきて掃除がストレス</span><span class="lang-en">"Sand falls off when I touch textured walls."</span><span class="lang-cn">不小心碰到和室的沙土墙壁就会掉沙子，打扫麻烦。</span></li>
+        <li><span class="lang-jp">押し入れの使い方がわからず荷物を適当に押し込んでいる</span><span class="lang-en">"Don't know how to use 'Oshiire' correctly."</span><span class="lang-cn">不懂和室的‘壁橱’该怎么用，里面随便塞满了纸箱雑物。</span></li>
+        <li><span class="lang-jp">和室の砂壁に触れると砂が落ちてきて掃除がストレス</span><span class="lang-en">"Sand falls off when I touch textured walls."</span><span class="lang-cn">不小心碰到和室的沙土墙壁就会掉沙子，打掃麻烦。</span></li>
         <li><span class="lang-jp">窓の鍵のストッパーに気づかず閉じ込められたとパニック</span><span class="lang-en">"Didn't notice lock stopper and panicked thinking I was locked in."</span><span class="lang-cn">不知道窗户月牙锁有防盗扣，打不开窗以为被反锁。</span></li>
-        <li><span class="lang-jp">玄関の三和土が狭すぎて、靴が溢れている</span><span class="lang-en">"Genkan is too small and overflowing with shoes."</span><span class="lang-cn">玄关脱鞋的地方太小了，摆满了全家人的鞋子。</span></li>
+        <li><span class="lang-jp">玄関の三和土が狭すぎて、靴が溢れている</span><span class="lang-en">"Genkan is too small and overflowing with shoes."</span><span class="lang-cn">玄关脱鞋的地方太小了，摆满了全家人の鞋子。</span></li>
         <li><span class="lang-jp">和室の襖の取っ手が外れてしまっている</span><span class="lang-en">"Handle of Japanese closet door (Fusuma) is missing."</span><span class="lang-cn">和室推拉门的把手掉下来了，不知道怎么安回去。</span></li>
         <li><span class="lang-jp">賃貸の壁に画鋲を刺していいかわからない</span><span class="lang-en">"Not sure if thumbtacks are allowed on rental walls."</span><span class="lang-cn">不知道租的房子墙上能不能钉图钉，海报只能放地上。</span></li>
-        <li><span class="lang-jp">カーテンフックの種類が多くて取り付けられない</span><span class="lang-en">"Too many types of hooks, can't hang curtains properly."</span><span class="lang-cn">窗帘轨道的挂钩种类太多了，买回来的窗帘挂不好。</span></li>
+        <li><span class="lang-jp">カーテンフックの種類が多くて取り付けられない</span><span class="lang-en">"Too many types of hooks, can't hang curtains properly."</span><span class="lang-cn">窗帘轨道の掛鉤種類太多了，買回来的窗帘掛不好。</span></li>
       </ul></div>
     </details>
 
@@ -172,24 +170,19 @@
         <li><span class="lang-jp">地震に備えた家具固定。突っ張り棒の正しい付け方</span><span class="lang-en">"Don't know the correct way to install tension rods."</span><span class="lang-cn">想固定家具防震，但不知道伸缩杆正确安装法。</span></li>
         <li><span class="lang-jp">自転車のタイヤの空気入れ。バルブの形が母国と違う</span><span class="lang-en">"Bicycle valve is different from my home country."</span><span class="lang-cn">自行车气门芯形状和国内不一样，打气筒用不了。</span></li>
         <li><span class="lang-jp">ポストに不要なチラシが溢れ、大事な手紙が埋もれる</span><span class="lang-en">"Too many flyers in post, important letters get buried."</span><span class="lang-cn">信箱里全是广告传单，重要信件都被埋在里面了。</span></li>
-        <li><span class="lang-jp">庭の雑草を抜きたいけれど、日本の虫やヘビが怖い</span><span class="lang-en">"Afraid of Japanese bugs or snakes while weeding."</span><span class="lang-cn">想拔院子里的杂草，很怕里面有毒虫或蛇。</span></li>
+        <li><span class="lang-jp">庭の雑草を抜きたいけれど、日本の虫やヘビが怖い</span><span class="lang-en">"Afraid of Japanese bugs or snakes while weeding."</span><span class="lang-cn">想拔院子里的雑草，很怕里面有毒虫或蛇。</span></li>
         <li><span class="lang-jp">水道管凍結の予防措置がわからず不安</span><span class="lang-en">"Don't know preventative measures for frozen pipes."</span><span class="lang-cn">看新闻说水管会冻裂，但不知道该怎么预防。</span></li>
         <li><span class="lang-jp">粗大ゴミの捨て方が複雑で、不要な家具が部屋を圧迫</span><span class="lang-en">"Bulky waste rules are complex, old furniture piles up."</span><span class="lang-cn">粗大垃圾丢弃规则太繁琐，旧家具堆满屋子。</span></li>
         <li><span class="lang-jp">ベランダの排水溝が隣と繋がっていて掃除が不安</span><span class="lang-en">"Balcony drain connected to neighbor, cleaning is stressful."</span><span class="lang-cn">阳台排水沟和隔壁连着，清理时生怕弄脏隔壁。</span></li>
         <li><span class="lang-jp">アパートの廊下の電球が切れているが何と言うか</span><span class="lang-en">"Shared hallway light is out, don't know how to ask to fix."</span><span class="lang-cn">走廊灯泡坏了很黑，不知道怎么跟管理公司说。</span></li>
-        <li><span class="lang-jp">防災放送が何を言っているかわからず不安</span><span class="lang-en">"Don't understand disaster broadcast and feel anxious."</span><span class="lang-cn">不明白防灾广播在说什么，总是觉得很不安。</span></li>
+        <li><span class="lang-jp">防災放送が何を言っているかわからず不安</span><span class="lang-en">"Don't understand disaster broadcast and feel anxious."</span><span class="lang-cn">不明白防灾广播在说什么，总是覺得很不安。</span></li>
       </ul></div>
     </details>
   </div>
-　<div class="slim-contact-bar">
-    <a href="https://forms.gle/i4ueZvc1SCgS8n279" class="slim-contact-link" target="_blank">✉ INQUIRY / CONSULTATION</a>
-  </div>
-
 
   <section class="ai-section">
     <h3>AI Support Characters</h3>
     <div class="ai-grid">
-      
       <div class="member-card">
         <div class="member-name-area"><span class="member-name">Okta</span><span class="member-kanji">双</span></div>
         <img src="https://drive.google.com/thumbnail?id=1Oe6yWIKIq_BXG1gdMDbS8hPrVcspPcZq&sz=w200" class="member-img" alt="Okta">
@@ -198,7 +191,7 @@
 
       <div class="member-card">
         <div class="member-name-area"><span class="member-name">Kuro</span><span class="member-kanji">黒</span></div>
-        <img src="https://drive.google.com/thumbnail?id=1ybjOQ1VybMTGnZ8I7dsX2INnmxTdZEzo&sz=w200" class="member-img" alt="Kuro">
+        <img src="https://drive.google.com/thumbnail?id=1ybjOQ1VybMTGnZ8I7dsX2INnmxTdZEzo&sz=w200" class="member-img" alt="Kuro" style="width: 187px;">
         <p class="member-desc">Programmer<br>プログラム担当</p>
       </div>
 
@@ -210,7 +203,7 @@
 
       <div class="member-card">
         <div class="member-name-area"><span class="member-name">Paulul</span><span class="member-kanji">議</span></div>
-        <img src="https://drive.google.com/thumbnail?id=16vHznh5MpOqNP3fs3Ag3mlFQn7PVtaQF&sz=w200" class="member-img" alt="Paulul">
+        <img src="https://drive.google.com/thumbnail?id=16vHznh5MpOqNP3fs3Ag3mlFQn7PVtaQF&sz=w200" class="member-img" alt="Paulul" style="width: 187px;">
         <p class="member-desc">Accountant AI.</p>
       </div>
 
@@ -219,9 +212,9 @@
         <img src="https://drive.google.com/thumbnail?id=12Hjbx1tjV5toKClfStjoEj7as8sdQrXX&sz=w200" class="member-img" alt="L">
         <p class="member-desc">An Ogre born from an Ogre.<br>Disciplining humans.</p>
       </div>
-
     </div>
   </section>
+
   <div class="seo-keywords">
     OKTA オクノ工務店 京都, Kyoto handyman English speaking, Uji house repair expat, traditional Japanese house maintenance, Kyoto plumber English, Shoji repair Kyoto, Tatami replacement Kyoto, Fushimi electrician for foreigners, English speaking architect Kyoto, house renovation Kyoto international residents, 宇治市 工務店 英語対応 京都市 住宅修理 外国人向けリフォーム 網戸張り替え 京都 西宮
   </div>
@@ -231,7 +224,6 @@
 <footer>&copy; 2026 OKTA Renovations Kyoto | Traditional Craftsmanship</footer>
 
 <script>
-  // カテゴリーを開閉した時に枠色を変える視覚効果
   const details = document.querySelectorAll('details');
   details.forEach(detail => {
     detail.addEventListener('toggle', () => {
